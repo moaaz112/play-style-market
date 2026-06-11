@@ -1,0 +1,183 @@
+export type Product = {
+  id: string;
+  name: string;
+  category: "football" | "basketball" | "shoes" | "accessories" | "men" | "women" | "kids";
+  collection?: "egypt" | "worldcup" | "new" | "best";
+  price: number;
+  salePrice?: number;
+  images: string[];
+  sizes: string[];
+  colors: { name: string; hex: string }[];
+  description: string;
+  stock: number;
+  rating: number;
+};
+
+const img = (seed: string) => `https://picsum.photos/seed/${seed}/800/800`;
+
+export const products: Product[] = [
+  {
+    id: "egypt-home-26",
+    name: "Egypt Home Jersey 2026",
+    category: "football",
+    collection: "egypt",
+    price: 1500,
+    salePrice: 1200,
+    images: [img("egypt-home-1"), img("egypt-home-2"), img("egypt-home-3")],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [{ name: "Red", hex: "#dc2626" }, { name: "Black", hex: "#000" }],
+    description: "Official Egypt national team home jersey for the 2026 World Cup. Lightweight breathable fabric with embroidered crest.",
+    stock: 24,
+    rating: 4.9,
+  },
+  {
+    id: "egypt-away-26",
+    name: "Egypt Away Jersey 2026",
+    category: "football",
+    collection: "egypt",
+    price: 1500,
+    salePrice: 1200,
+    images: [img("egypt-away-1"), img("egypt-away-2"), img("egypt-away-3")],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [{ name: "White", hex: "#fff" }],
+    description: "Official Egypt national team away jersey for the 2026 World Cup. Clean white kit with subtle pyramid pattern.",
+    stock: 18,
+    rating: 4.8,
+  },
+  {
+    id: "brazil-home",
+    name: "Brazil Home Jersey",
+    category: "football",
+    collection: "worldcup",
+    price: 1400,
+    images: [img("brazil-1"), img("brazil-2")],
+    sizes: ["S", "M", "L", "XL"],
+    colors: [{ name: "Yellow", hex: "#fde047" }],
+    description: "Iconic Brazil home jersey. Fans edition.",
+    stock: 30,
+    rating: 4.7,
+  },
+  {
+    id: "spain-away",
+    name: "Spain Away Jersey",
+    category: "football",
+    collection: "worldcup",
+    price: 1400,
+    images: [img("spain-1"), img("spain-2")],
+    sizes: ["S", "M", "L", "XL"],
+    colors: [{ name: "White", hex: "#fff" }],
+    description: "Spain national team away jersey. Player edition.",
+    stock: 15,
+    rating: 4.6,
+  },
+  {
+    id: "france-home",
+    name: "France Home Jersey",
+    category: "football",
+    collection: "worldcup",
+    price: 1400,
+    images: [img("france-1"), img("france-2")],
+    sizes: ["S", "M", "L", "XL"],
+    colors: [{ name: "Blue", hex: "#1d4ed8" }],
+    description: "France national team home jersey. Fans edition.",
+    stock: 20,
+    rating: 4.8,
+  },
+  {
+    id: "argentina-home",
+    name: "Argentina Home Jersey",
+    category: "football",
+    collection: "worldcup",
+    price: 1400,
+    images: [img("argentina-1"), img("argentina-2")],
+    sizes: ["S", "M", "L", "XL"],
+    colors: [{ name: "Sky Blue", hex: "#7dd3fc" }],
+    description: "Argentina national team home jersey with iconic stripes.",
+    stock: 22,
+    rating: 4.9,
+  },
+  {
+    id: "lakers-jersey",
+    name: "LA Lakers Jersey #23",
+    category: "basketball",
+    collection: "best",
+    price: 1800,
+    salePrice: 1500,
+    images: [img("lakers-1"), img("lakers-2")],
+    sizes: ["S", "M", "L", "XL"],
+    colors: [{ name: "Gold", hex: "#facc15" }, { name: "Purple", hex: "#7c3aed" }],
+    description: "Official LA Lakers basketball jersey.",
+    stock: 12,
+    rating: 4.8,
+  },
+  {
+    id: "psg-jersey",
+    name: "PSG Away Jersey",
+    category: "football",
+    collection: "new",
+    price: 1600,
+    images: [img("psg-1"), img("psg-2")],
+    sizes: ["S", "M", "L", "XL"],
+    colors: [{ name: "Navy", hex: "#1e3a8a" }],
+    description: "Paris Saint-Germain away jersey.",
+    stock: 16,
+    rating: 4.7,
+  },
+  {
+    id: "nike-air-runner",
+    name: "Nike Air Runner",
+    category: "shoes",
+    collection: "new",
+    price: 2500,
+    salePrice: 2100,
+    images: [img("shoe-1"), img("shoe-2")],
+    sizes: ["40", "41", "42", "43", "44", "45"],
+    colors: [{ name: "Black", hex: "#000" }, { name: "White", hex: "#fff" }],
+    description: "Lightweight running shoes with responsive cushioning.",
+    stock: 25,
+    rating: 4.6,
+  },
+  {
+    id: "sports-bag",
+    name: "Pro Sports Bag",
+    category: "accessories",
+    collection: "best",
+    price: 800,
+    images: [img("bag-1"), img("bag-2")],
+    sizes: ["One Size"],
+    colors: [{ name: "Black", hex: "#000" }],
+    description: "Durable sports bag with shoe compartment.",
+    stock: 40,
+    rating: 4.5,
+  },
+  {
+    id: "training-socks",
+    name: "Training Socks (3-Pack)",
+    category: "accessories",
+    price: 250,
+    images: [img("socks-1")],
+    sizes: ["S", "M", "L"],
+    colors: [{ name: "White", hex: "#fff" }, { name: "Black", hex: "#000" }],
+    description: "Breathable cotton training socks, 3-pack.",
+    stock: 100,
+    rating: 4.4,
+  },
+  {
+    id: "kids-jersey",
+    name: "Kids Egypt Jersey",
+    category: "kids",
+    collection: "egypt",
+    price: 900,
+    salePrice: 750,
+    images: [img("kids-1"), img("kids-2")],
+    sizes: ["4-6Y", "6-8Y", "8-10Y", "10-12Y"],
+    colors: [{ name: "Red", hex: "#dc2626" }],
+    description: "Kids edition Egypt national team jersey.",
+    stock: 18,
+    rating: 4.7,
+  },
+];
+
+export const getProduct = (id: string) => products.find((p) => p.id === id);
+export const getByCategory = (cat: string) => products.filter((p) => p.category === cat);
+export const getByCollection = (col: string) => products.filter((p) => p.collection === col);
